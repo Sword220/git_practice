@@ -9,7 +9,8 @@ include Git
 def self.menu
   puts 'MAIN MENU'.colorize(:cyan)
   puts '1: Enter git command'.colorize(:cyan)
-  puts '2: Exit'.colorize(:cyan)
+  puts '2:  View git config'.colorize(:cyan)
+  puts '3: Exit'.colorize(:cyan)
   choice = gets.to_i
 
   case choice
@@ -18,6 +19,8 @@ def self.menu
       Git.puts_git(gets.strip)
       menu
     when 2
+      Git.config
+    when 3
       exit
     else
       puts 'Invalid Choice'.colorize(:red)
@@ -48,12 +51,9 @@ class Main
       else
         puts 'Invalid Choice'.colorize(:red)
         menu
-    end
+      end
   end
 end
 
 Main.menu
 
-Message Input
-
-Message uofu_summer_2018
